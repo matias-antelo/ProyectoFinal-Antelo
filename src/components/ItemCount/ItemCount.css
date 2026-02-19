@@ -1,0 +1,48 @@
+.item-count {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* MISMO ESTILO VISUAL QUE item-title */
+.item-count .counter span {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.counter button {
+  background: #0f3460;
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.counter button:hover {
+  background: #16213e;
+}
+
+.add-to-cart {
+  background: linear-gradient(135deg, #6c5ce7 0%, #5f3dc4 100%);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.add-to-cart:hover {
+  transform: scale(1.02);
+}
