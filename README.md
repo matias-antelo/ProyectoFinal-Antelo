@@ -1,16 +1,41 @@
-# React + Vite
+Entrega final: Web App de e-commerce
+Podrás seleccionar una temática a elección, creando tu propio catálogo de productos, o utilizando herramientas generadoras de datos o "mock data".Implementa la conexión a un servicio en la nube (Firebase) que te provea de una Base de Datos donde almacenar el listado de tus productos, y te permita guardar registros de las compras realizadas por los usuarios del e-commerce.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Objetivos
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Requisitos
+Listado y Detalle de productos
+Generación dinámica del listado de productos y acceso a la vista en detalle de cada uno (ItemListContainer y ItemDetailContainer)
 
-## React Compiler
+Implementación de componente ItemCount que permita seleccionar cantidad de unidades a agregar al carrito y realice las validaciones necesarias (valor mínimo, límite por stock, etc.)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Ocultar el componente ItemCount en ItemDetail luego de agregar un producto al carrito.
 
-## Expanding the ESLint configuration
+Navegación
+Navegación entre las secciones de catálogo, categorías, detalle, carrito y checkout, utilizando React Router y mediante enlaces en el componente NavBar.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Criterios de compras
+Almacenamiento del estado de carrito de compras mediante Context.
+
+Mostrar el contenido del carrito dentro del componente Cart (productos, cantidades, subtotales, totales, etc.)
+
+Mostrar un icono/imágen del carrito en el componente CartWidget. Debe mostrar el total de unidades agregadas al context
+
+Creación de una colección donde se almacene la información de todos los productos del e-commerce, y realizar las consultas desde React para mostrarlos en la app.
+
+Generación de un documento en Firestore al confirmar una compra, registrando los detalles de la misma.
+
+Experiencia de usuario
+Utilizar renderizado condicional para mostrar loaders y mensajes condicionales, como “producto sin stock”, “carrito vacío”, etc.
+
+Como finalización de la experiencia de usuario, brindarle al usuario el id (o detalles adicionales) de la orden generada en Firestore
+
+Buenas prácticas y convenciones
+Respetar las convenciones y consignas del curso para los nombres de variables funciones, componentes. eventos, y arquitectura de carpetas/archivos.
+
+Crear un documento en formato markdown documentando brevemente el proyecto
+
+Recomendaciones
+
+No es necesario que envíes el enlace a tu panel de Firestore: el mismo es visible solo para el usuario administrador (es decir, accediendo con tu cuenta de google)

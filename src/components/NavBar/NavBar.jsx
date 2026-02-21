@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import CartWidget from "../CartWidget";
+import CartWidget from "../NavBar/CartWidget";
 import Logo from "../../Fotos/Logo.png";
 import "./NavBar.css";
 

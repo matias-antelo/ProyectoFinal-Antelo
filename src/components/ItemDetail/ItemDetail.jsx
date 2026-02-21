@@ -1,18 +1,7 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import ItemCount from "../components/ItemCount/ItemCount";
+import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetailContainer.css";
 
-const ItemDetailContainer = () => {
-  const [product, setProduct] = useState(null);
-  const { itemId } = useParams();
-
-  useEffect(() => {
-    fetch(`https://dummyjson.com/products/${itemId}`)
-      .then((res) => res.json())
-      .then((data) => setProduct(data));
-  }, [itemId]);
-
+const ItemDetail = ({ product }) => {
   if (!product) {
     return <p className="loading">Cargando detalle...</p>;
   }
@@ -36,4 +25,4 @@ const ItemDetailContainer = () => {
   );
 };
 
-export default ItemDetailContainer;
+export default ItemDetail;
