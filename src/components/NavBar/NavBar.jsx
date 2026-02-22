@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 import CartWidget from "../NavBar/CartWidget";
 import Logo from "../../Fotos/Logo.png";
 import "./NavBar.css";
+import { getCategories } from "../../firebase/db";
 
 const NavBar = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch("https://dummyjson.com/products/categories")
-      .then((res) => res.json())
-      .then((data) => setCategories(data))
+    getCategories()
+      .then(cats => setCategories(cats))
   }, []);
 
   return (
@@ -31,9 +31,9 @@ const NavBar = () => {
 
                 <ul className="dropdown-menu">
                   {categories.map((cat) => (
-                    <li key={cat.slug}>
-                      <Link to={`/category/${cat.slug}`}>
-                        {cat.name}
+                    <li key={cat}>
+                      <Link to={`/category/${cat}`}>
+                        {cat}
                       </Link>
                     </li>
                   ))}
