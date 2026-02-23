@@ -1,4 +1,4 @@
-import { getFirestore, collection, getDocs, query, where, doc, getDoc } from "firebase/firestore";
+import { getFirestore, collection, getDocs, query, where, doc, getDoc, addDoc, serverTimestamp } from "firebase/firestore";
 import { app } from "./config";
 
 const db = getFirestore(app);
@@ -50,3 +50,9 @@ export const getItemById = async (id) => {
     }
     return docSnap.data();
 }
+
+export const createOrder = async (order) => {
+        const ordersCollection = collection(db, "orders");
+        const docRef = await addDoc(ordersCollection, order);
+        return docRef.id;
+};

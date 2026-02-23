@@ -1,15 +1,20 @@
-const CartWidget = () => {
-  return (
-    <button
-      type="button"
-      className="btn btn-outline-secondary position-relative d-flex align-items-center"
-    >
-      <span className="fs-4">🛒</span>
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
+import { Link } from "react-router-dom";
 
-      <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">
-        4
-      </span>
-    </button>
+const CartWidget = () => {
+  const { totalUnits } = useContext(CartContext);
+  const total = totalUnits();
+
+  return (
+    <Link to="/cart" className="btn btn-outline-secondary position-relative">
+      <span className="fs-4">🛒</span>
+      {total > 0 && (
+        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          {total}
+        </span>
+      )}
+    </Link>
   );
 };
 
